@@ -123,4 +123,5 @@ wslu
 x11-common
 x11-utils
 xclip
+xdg-utils
 zsh
