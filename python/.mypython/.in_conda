@@ -1,0 +1,8 @@
+#!/bin/bash
+# Define $MYCONDA_VENV in ~/.zshenv_spec
+unalias python &>/dev/null
+if ! type conda &>/dev/null; then
+  myconda
+fi
+conda activate "${MYCONDA_VENV}"
+

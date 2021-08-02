@@ -1,0 +1,25 @@
+{
+  "load_extensions": {
+    "vim_binding/vim_binding": true,
+    "hinterland/hinterland": false,
+    "latex_envs/latex_envs": true,
+    "snippets/main": true,
+    "varInspector/main": true,
+    "toc2/main": true,
+    "code_prettify/autopep8": true,
+    "livemdpreview/livemdpreview": true,
+    "execute_time/ExecuteTime": true,
+    "scratchpad/main": true,
+    "highlighter/highlighter": true,
+    "jupyter_tabnine/jupyter_tabnine": true,
+    "jupyter_tabnine/main": true
+  },
+  "jupyter_tabnine": {
+    "assist_active": true
+  },
+  "Notebook": {
+    "Header": true,
+    "Toolbar": true
+  }
+}
+

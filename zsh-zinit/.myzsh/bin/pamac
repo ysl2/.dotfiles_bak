@@ -1,0 +1,15 @@
+#!/bin/bash
+
+first="$1"
+if [[ "$first" == 'search' ]]; then
+  shift
+  /usr/bin/pamac "${first}" -c "$@"
+else
+  /usr/bin/pamac "$@"
+fi
+
+echo ""
+echo "[38;2;36;122;174m$(type pamac)"
+# echo "[0;0;0;0;0m"
+
+
