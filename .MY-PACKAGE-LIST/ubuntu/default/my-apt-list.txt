@@ -11,9 +11,11 @@ dbus-x11
 diffutils
 dirmngr
 eatmydata
+fdclone
 fdisk
 findutils
 firefox
+fontconfig
 fontconfig-config
 fonts-dejavu-core
 fzf
@@ -81,6 +83,7 @@ libxxf86dga1
 libxxf86vm1
 lsb-release
 mesa-vulkan-drivers
+ncdu
 ncurses-base
 ncurses-bin
 ncurses-term
