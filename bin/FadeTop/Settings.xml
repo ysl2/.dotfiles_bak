@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<FadeTopSettings version="3.0" xmlns="http://www.fadetop.com/fadetop/xmlns/settings">
+    <States>
+        <Application debut="0" auto_fade_enabled="1" />
+        <User break_trail="8:1" />
+    </States>
+    <Options>
+        <General activity_timeout="30" idle_timeout="5" fade_again_delay="1" auto_block_enabled="0" />
+        <Fader max_opacity="60">
+            <Foreground fg_color="#FFFFFF" fg_position="center" fg_offset_x="0" fg_offset_y="0" fg_time_format="auto" fg_message="My Health: %HEALTH_INDEX%%" />
+            <Background bg_color="#008040" bg_image_enabled="1" bg_random_image_enabled="0" bg_image_file="" bg_image_position="fill" />
+        </Fader>
+        <Sound sound_enabled="0" sound_file="" sound_fadein_enabled="0" sound_fadeout_enabled="1" sound_volume_default="50" />
+    </Options>
+</FadeTopSettings>

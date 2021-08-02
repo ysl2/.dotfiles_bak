@@ -1,0 +1,54 @@
+#https://stackoverflow.com/questions/987142/make-gitignore-ignore-everything-except-a-few-files
+# ===
+# === Ignore everything in home
+# ===
+/*
+
+# But not these files...
+!.gitignore
+!.gitconfig
+!README.md
+!.bashrc
+!.bash_profile
+!bin
+!lib
+
+
+
+# ===
+# === Ignore everything in .config
+# ===
+# !.config
+# /.config/*
+
+# But not these files...
+# !.config/nvim
+# !.config/pip
+
+
+
+# ===
+# === Ignore everything in .cache
+# ===
+# !.cache
+# /.cache/*
+
+# But not these files...
+# !.cache/vim
+# .cache/vim/*
+# !.cache/vim/theme.txt
+
+
+
+# ===
+# === Ignore everything in AppData
+# ===
+!AppData
+/AppData/*
+
+# But not these files...
+!AppData/Local
+/AppData/Local/*
+!AppData/Local/nvim
+
+
