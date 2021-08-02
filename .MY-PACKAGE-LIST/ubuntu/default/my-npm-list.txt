@@ -1,0 +1,5 @@
+/usr/lib
+├── bash-language-server@1.17.0
+├── instant-markdown-d@0.2.0
+└── npm@6.14.14
+

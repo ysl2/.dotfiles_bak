@@ -5,8 +5,10 @@ Automat
 blinker
 certifi
 chardet
+cliapp
 Click
 cloud-init
+cmdtest
 colorama
 command-not-found
 configobj
@@ -31,15 +33,18 @@ language-selector
 launchpadlib
 lazr.restfulclient
 lazr.uri
+Markdown
 MarkupSafe
 more-itertools
 msgpack
 neovim
 netifaces
 oauthlib
+packaging
 pip
 pyasn1
 pyasn1-modules
+Pygments
 PyGObject
 PyHamcrest
 PyJWT
@@ -47,6 +52,7 @@ pymacaroons
 PyNaCl
 pynvim
 pyOpenSSL
+pyparsing
 pyrsistent
 pyserial
 python-apt
@@ -62,6 +68,7 @@ simplejson
 six
 ssh-import-id
 systemd-python
+ttystatus
 Twisted
 ubuntu-advantage-tools
 ufw
