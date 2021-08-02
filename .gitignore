@@ -12,7 +12,6 @@
 !.bash_profile
 !bin
 !lib
-!doc
 
 
 # ===
@@ -27,31 +26,6 @@
 
 
 # ===
-# === Ignore everything in .config
-# ===
-# !.config
-# /.config/*
-
-# But not these files...
-# !.config/nvim
-# !.config/pip
-
-
-
-# ===
-# === Ignore everything in .cache
-# ===
-# !.cache
-# /.cache/*
-
-# But not these files...
-# !.cache/vim
-# .cache/vim/*
-# !.cache/vim/theme.txt
-
-
-
-# ===
 # === Ignore everything in AppData
 # ===
 !AppData
@@ -62,4 +36,6 @@
 /AppData/Local/*
 !AppData/Local/nvim
 
-
+!AppData/Roaming
+/AppData/Roaming/*
+!AppData/Roaming/alacritty
