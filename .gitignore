@@ -14,6 +14,16 @@
 !lib
 
 
+# ===
+# === Ignore everything in .config
+# ===
+!.ssh
+/.ssh/*
+
+# But not these files...
+!.ssh/config
+
+
 
 # ===
 # === Ignore everything in .config
