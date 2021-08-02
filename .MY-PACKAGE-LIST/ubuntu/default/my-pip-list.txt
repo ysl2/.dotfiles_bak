@@ -41,6 +41,7 @@ neovim
 netifaces
 oauthlib
 packaging
+pexpect
 pip
 pyasn1
 pyasn1-modules
@@ -66,6 +67,7 @@ service-identity
 setuptools
 simplejson
 six
+sos
 ssh-import-id
 systemd-python
 ttystatus
