@@ -15,7 +15,7 @@
 
 # Set which version of stow to use:
 STOW=stow
-DOTFILES=~/.fw
+DOTFILES=~/.dotfiles-main
 SOFT=soft
 
 function _my_traverse() {
