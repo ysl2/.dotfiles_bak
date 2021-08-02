@@ -31,3 +31,9 @@ export PERL5LIB='/usr/lib/perl5'
 export MYCONDA=miniconda3
 # export MYCONDA=anaconda
 
+
+# ===
+# === n for Node.js
+# ===
+export N_NODE_MIRROR=https://npm.taobao.org/mirrors/node
+
