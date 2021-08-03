@@ -1,1 +1,0 @@
-../../.dotfiles-main/.MY-GLOBAL-SETTINGS/start.sh
