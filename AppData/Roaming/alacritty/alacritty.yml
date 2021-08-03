@@ -22,16 +22,18 @@ window:
   # Specified in number of columns/lines, not pixels.
   # If both are `0`, this setting is ignored.
   dimensions:
-    columns: 75
-    lines: 30
+    columns: 0
+    lines: 0
+  #   columns: 75
+  #   lines: 30
 
   # Window position (changes require restart)
   #
   # Specified in number of pixels.
   # If the position is not set, the window manager will handle the placement.
-  position:
-    x: 640
-    y: 85
+  # position:
+  #   x: 640
+  #   y: 85
 
 
   # Window padding (changes require restart)
@@ -798,4 +800,4 @@ key_bindings:
 #  - { key: NumpadEnter,             chars: "\n"                              }
 
 import:
-  - ~/.config/alacritty/theme/nord.yml
+  - C:\Users\yusoli\AppData\Roaming\alacritty\theme\nord.yml
