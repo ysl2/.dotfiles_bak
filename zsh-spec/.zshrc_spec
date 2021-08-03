@@ -1,4 +1,4 @@
 export MYCONDA="miniconda3"
 
-MYCONDA_VENV_1="d2l-zh"
+export MYCONDA_VENV_1="d2l-zh"
 export MYCONDA_VENV="${MYCONDA_VENV_1}"
