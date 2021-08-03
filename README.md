@@ -1,6 +1,6 @@
 # Dotfiles for Fxxking Windows
 
-> NOTE: This branch `master` is for wsl2-ubutu. To check windows10, plesase checkout branch `windows`
+> NOTE: This branch `master` is for WSL2 Ubuntu system. To check windows10, plesase checkout branch `windows`
 
 ## install
 
