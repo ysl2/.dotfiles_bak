@@ -1,1 +1,1 @@
-../.dotfiles-main/my-package-upload.sh
+../.dotlib/my-package-upload.sh

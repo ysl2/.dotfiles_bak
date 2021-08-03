@@ -1,1 +1,1 @@
-../.dotfiles-main/vim
+../.dotlib/vim

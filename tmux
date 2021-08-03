@@ -1,1 +1,1 @@
-../.dotfiles-main/tmux
+../.dotlib/tmux

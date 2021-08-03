@@ -1,1 +1,1 @@
-../.dotfiles-main/_my-git-upload.sh
+../.dotlib/_my-git-upload.sh

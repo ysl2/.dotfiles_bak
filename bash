@@ -1,1 +1,1 @@
-../.dotfiles-main/bash
+../.dotlib/bash
