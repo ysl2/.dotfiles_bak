@@ -1,8 +1,0 @@
-#!/bin/bash
-if ! type conda &>/dev/null; then
-  myconda
-fi
-conda deactivate
-noconda
-alias python=/usr/bin/python
-

@@ -6,7 +6,7 @@
 
 ```bash
 # install into folder ~/.dotfiles-main
-git clone git@git.zhlh6.cn:ysl2/.fw.git ~/.dotfiles-main
+git clone git@git.zhlh6.cn:ysl2/.fw.git ~/.dotfiles
 ```
 
 ## Set no password for sudo
