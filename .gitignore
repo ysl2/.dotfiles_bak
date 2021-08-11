@@ -39,3 +39,13 @@
 !AppData/Roaming
 /AppData/Roaming/*
 !AppData/Roaming/alacritty
+
+
+# ===
+# === Ignore everything in GlobalVim
+# ===
+!GlobalVim
+/GlobalVim/*
+
+# But not these files...
+!GlobalVim/default.ini
