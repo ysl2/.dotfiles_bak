@@ -1,3 +1,4 @@
+export PATH=~/.local/bin:$PATH
 export MYCONDA="miniconda3"
 
 # https://stackoverflow.com/questions/62814002/start-this-command-cannot-be-run-due-to-the-error-the-system-cannot-find-the
