@@ -5,73 +5,73 @@
 /*
 
 # But not these files...
-!.gitignore
-!.gitconfig
-!README.md
-!.bashrc
-!.bash_profile
-!bin
-!lib
-!.env
+!/.gitignore
+!/.gitconfig
+!/README.md
+!/.bashrc
+!/.bash_profile
+!/bin
+!/lib
+!/.env
 
 
 
 # ===
 # === Ignore everything in .cache
 # ===
-!.cache
+!/.cache
 /.cache/*
 
 # But not these files...
-!.cache/vim
+!/.cache/vim
 /.cache/vim/*
-!.cache/vim/theme.txt
+!/.cache/vim/theme.txt
 
 
 
 # ===
 # === Ignore everything in .ssh
 # ===
-!.ssh
+!/.ssh
 /.ssh/*
 
 # But not these files...
-!.ssh/config
+!/.ssh/config
 
 
 
 # ===
 # === Ignore everything in AppData
 # ===
-!AppData
+!/AppData
 /AppData/*
 
 # But not these files...
-!AppData/Local
+!/AppData/Local
 /AppData/Local/*
-!AppData/Local/nvim
+!/AppData/Local/nvim
 
-!AppData/Roaming
+!/AppData/Roaming
 /AppData/Roaming/*
-!AppData/Roaming/alacritty
+!/AppData/Roaming/alacritty
 
 
 # ===
 # === Ignore everything in GlobalVim
 # ===
-!GlobalVim
+!/GlobalVim
 /GlobalVim/*
 
 # But not these files...
-!GlobalVim/default.ini
+!/GlobalVim/default.ini
 
 
 
 # ===
 # === Ignore everything in pip
 # ===
-!pip
+!/pip
 /pip/*
 
 # But not these files...
-!pip/pip.ini
+!/pip/pip.ini
