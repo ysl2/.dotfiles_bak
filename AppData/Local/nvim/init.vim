@@ -1,6 +1,2 @@
-set number
-set relativenumber
-
-inoremap <C-c> <ESC>
-noremap S <Nop>
-noremap s <Nop>
+set nossh
+execute 'source' fnamemodify(expand('<sfile>'), ':h').'/core/core.vim'

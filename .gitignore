@@ -12,10 +12,26 @@
 !.bash_profile
 !bin
 !lib
+!pip
+!.env
+
 
 
 # ===
-# === Ignore everything in .config
+# === Ignore everything in .cache
+# ===
+!.cache
+/.cache/*
+
+# But not these files...
+!.cache/vim
+/.cache/vim/*
+!.cache/vim/theme.txt
+
+
+
+# ===
+# === Ignore everything in .ssh
 # ===
 !.ssh
 /.ssh/*
