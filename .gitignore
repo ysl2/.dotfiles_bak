@@ -12,7 +12,6 @@
 !.bash_profile
 !bin
 !lib
-!pip
 !.env
 
 
@@ -65,3 +64,14 @@
 
 # But not these files...
 !GlobalVim/default.ini
+
+
+
+# ===
+# === Ignore everything in pip
+# ===
+!pip
+/pip/*
+
+# But not these files...
+!pip/pip.ini
