@@ -6,3 +6,5 @@ export BROWSER="/mnt/c/Program Files (x86)\Mozilla Firefox\firefox.exe"
 
 export MYCONDA_VENV_1="d2l-zh"
 export MYCONDA_VENV="${MYCONDA_VENV_1}"
+
+alias gD="cd /mnt/c/Users/yusoli/Downloads"
