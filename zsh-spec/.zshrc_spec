@@ -2,7 +2,8 @@ export PATH=~/.local/bin:$PATH
 export MYCONDA="miniconda3"
 
 # https://stackoverflow.com/questions/62814002/start-this-command-cannot-be-run-due-to-the-error-the-system-cannot-find-the
-export BROWSER="/mnt/c/Program Files (x86)\Mozilla Firefox\firefox.exe"
+# export BROWSER="/mnt/c/Program Files (x86)\Mozilla Firefox\firefox.exe"
+export BROWSER="/mnt/c/Program Files\Google\Chrome\Application\chrome.exe"
 
 export MYCONDA_VENV_1="d2l-zh"
 export MYCONDA_VENV="${MYCONDA_VENV_1}"
