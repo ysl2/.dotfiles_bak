@@ -188,5 +188,7 @@ alias ra='ranger'
 alias t='tmux'
 alias ta='tmux attach'
 
+alias :q='exit'
+
 set -o vi
 
