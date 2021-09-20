@@ -187,6 +187,7 @@ alias l='ls -lh --color=always'
 alias ra='ranger'
 alias t='tmux'
 alias ta='tmux attach'
+alias py='python'
 
 alias :q='exit'
 
