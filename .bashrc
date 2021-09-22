@@ -13,15 +13,13 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
 fi
 
 
-mkdir -p ~/.config/myzsh/
-
 if [[ ! -e ~/.bash-it/ ]]; then
     git clone --depth=1 https://ghproxy.com/https://github.com/Bash-it/bash-it.git ~/.bash-it
 fi
 
 if [[ ! -e ~/.config/myzsh/autojump ]]; then
-    git clone https://ghproxy.com/https://github.com/wting/autojump.git ~/.config/myzsh/autojump
-    cd ~/.config/myzsh/autojump
+    git clone https://ghproxy.com/https://github.com/wting/autojump.git ~/.autojump
+    cd ~/.autojump
     ./install.py
     cd -
 fi
@@ -41,6 +39,7 @@ function addToPATH {
 addToPATH ~/.cargo/bin
 addToPATH /usr/local/go/bin
 addToPATH ~/go/bin
+addToPATH ~/.bin
 
 # Path to the bash it configuration
 export BASH_IT="/home/${USER}/.bash-it"
