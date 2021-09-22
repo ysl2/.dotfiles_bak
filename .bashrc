@@ -184,6 +184,7 @@ alias ll='ls -lah --color=always'
 alias l='ls -lh --color=always'
 
 alias ra='ranger'
+alias lg='lazygit'
 alias t='tmux'
 alias ta='tmux attach'
 alias py='python'
