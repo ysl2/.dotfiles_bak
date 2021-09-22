@@ -1,10 +1,27 @@
 /*
 
+
+# ===
+# === ~/
+# ===
+
 !/.gitignore
 !/.gitconfig
 !/.bash_profile
 !/.bashrc
 !/.vimrc
+
+
+# ===
+# === ~/.config
+# ===
+
 !/.config/
 /.config/*
+
 !/.config/ranger
+
+!/.config/lazygit
+/.config/lazygit/*
+!/.config/lazygit/config.yml
+
