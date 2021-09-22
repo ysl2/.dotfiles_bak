@@ -17,7 +17,7 @@ if [[ ! -e ~/.bash-it/ ]]; then
     git clone --depth=1 https://ghproxy.com/https://github.com/Bash-it/bash-it.git ~/.bash-it
 fi
 
-if [[ ! -e ~/.config/myzsh/autojump ]]; then
+if [[ ! -e ~/.autojump ]]; then
     git clone https://ghproxy.com/https://github.com/wting/autojump.git ~/.autojump
     cd ~/.autojump
     ./install.py
