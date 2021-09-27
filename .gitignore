@@ -7,7 +7,6 @@
 
 !/.gitignore
 !/.gitconfig
-!/.bash_profile
 !/.bashrc
 !/.vimrc
 !/.tmux.conf
