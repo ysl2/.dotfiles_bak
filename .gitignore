@@ -12,6 +12,16 @@
 !/.tmux.conf
 !/.condarc
 
+# zsh
+!/.myzsh
+!/.fdignore
+!/.myzsh
+!/.p10k.zsh
+!/.zprofile
+!/.zshdebug.zsh
+!/.zshenv
+!/.zshrc
+
 
 # ===
 # === ~/.config

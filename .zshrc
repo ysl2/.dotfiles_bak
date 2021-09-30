@@ -1,0 +1,1 @@
+.dotlib/zsh-zinit/.zshrc

@@ -1,0 +1,1 @@
+.dotlib/zsh-zinit/.p10k.zsh
