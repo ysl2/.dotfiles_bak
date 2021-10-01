@@ -11,6 +11,8 @@
 !/.vimrc
 !/.tmux.conf
 !/.condarc
+!/.npmrc
+!/.yarnrc
 
 # zsh
 !/.myzsh
