@@ -40,3 +40,16 @@
 /.config/lazygit/*
 !/.config/lazygit/config.yml
 
+!/.config/nvim
+
+
+# ===
+# === ~/.cache
+# ===
+
+!/.cache/
+/.cache/*
+!/.cache/vim
+/.cache/vim/*
+!/.cache/vim/theme.txt
+
