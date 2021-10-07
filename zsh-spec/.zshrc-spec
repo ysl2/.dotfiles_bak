@@ -1,4 +1,4 @@
-export PATH=~/.local/bin:$PATH
+# export PATH=~/.local/bin:$PATH
 
 alias gD="cd /mnt/c/Users/yusoli/Downloads"
 
