@@ -53,6 +53,9 @@
 !/AppData/Local
 /AppData/Local/*
 !/AppData/Local/nvim
+!/AppData/Local/SumatraPDF
+/AppData/Local/SumatraPDF/*
+!/AppData/Local/SumatraPDF/SumatraPDF-settings.txt
 
 !/AppData/Roaming
 /AppData/Roaming/*
