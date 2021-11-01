@@ -1,6 +1,6 @@
 ﻿# For documentation, see https://www.sumatrapdfreader.org/settings/settings3-3-1.html
 
-MainWindowBackground = #333333
+MainWindowBackground = #7a7e80
 EscToExit = false
 ReuseInstance = false
 UseSysColors = false
@@ -8,8 +8,8 @@ RestoreSession = true
 TabWidth = 300
 
 FixedPageUI [
-	TextColor = #EBEBEB
-	BackgroundColor = #2F3437
+	TextColor = #ebebeb
+	BackgroundColor = #2f3437
 	SelectionColor = #f5fc0c
 	WindowMargin = 2 4 2 4
 	PageSpacing = 4 4
@@ -18,8 +18,8 @@ FixedPageUI [
 EbookUI [
 	FontName = Georgia
 	FontSize = 12.5
-	TextColor = #EBEBEB
-	BackgroundColor = #2F3437
+	TextColor = #ebebeb
+	BackgroundColor = #2f3437
 	UseFixedPageUI = false
 ]
 ComicBookUI [
