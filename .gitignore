@@ -42,7 +42,11 @@
 !/.config/lazygit
 /.config/lazygit/*
 !/.config/lazygit/config.yml
+
 !/.config/nvim_
+!/.config/nvim
+/.config/nvim/*
+!/.config/nvim/init.vim
 
 
 # ===
