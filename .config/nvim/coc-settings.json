@@ -1,15 +1,11 @@
 {
+  "coc.preferences.hoverTarget": "preview",
   "Lua.telemetry.enable": false,
   "languageserver": {
     "bash": {
       "command": "bash-language-server",
       "args": ["start"],
       "filetypes": ["sh"]
-    },
-    "lua": {
-      // https://github.com/sumneko/lua-language-server
-      "command": "lua-lsp",
-      "filetypes": ["lua"]
     }
   }
 }
