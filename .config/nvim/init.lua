@@ -257,6 +257,8 @@ vim.keymap.set("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
 vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
+vim.keymap.set("n", "\\e", ":CocCommand explorer --toggle --root-strategies cwd<CR>", {silent = true, noremap = true})
+
 
 -- require('mason').setup(
 --   {
