@@ -44,9 +44,7 @@ require('packer').startup(
       use 'easymotion/vim-easymotion'
       use 'tpope/vim-surround'
       use 'tpope/vim-commentary'
-      -- use 'williamboman/mason.nvim'
-      -- use 'williamboman/mason-lspconfig.nvim'
-      -- use 'neovim/nvim-lspconfig'
+      use 'kevinhwang91/rnvimr'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -265,27 +263,5 @@ vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 vim.g.EasyMotion_smartcase = 1
 vim.g.EasyMotion_keys = 'qwertyuiopasdfghjklzxcvbnm'
 
-
--- require('mason').setup(
---   {
---     github = { download_url_template = 'https://ghproxy.com/https://github.com/%s/releases/download/%s/%s', }
---   }
--- )
--- require('mason-lspconfig').setup(
---   {
---       ensure_installed = {
---         'sumneko_lua',
---       },
---       automatic_installation = true,
---   }
--- )
--- require('lspconfig').sumneko_lua.setup {
---   settings = {
---     Lua = {
---       diagnostics = {
---         globals = { 'vim' }
---       }
---     }
---   }
--- }
-
+vim.cmd('hi link NormalFloat NONE')
+vim.keymap.set("n", "\\r", ":RnvimrToggle<CR>", {silent = true, noremap = true})
