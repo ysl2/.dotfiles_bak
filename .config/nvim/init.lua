@@ -14,6 +14,11 @@ vim.keymap.set('i', '<C-c>', '<ESC>', opts)
 vim.keymap.set('n', '>>', '>>^', opts)
 vim.keymap.set('n', '<<', '<<^', opts)
 
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
+})
+
 
 local ensure_packer = function()
   local fn = vim.fn
@@ -34,6 +39,9 @@ require('packer').startup(
       use 'wbthomason/packer.nvim'
       use {'neoclide/coc.nvim', branch = 'release'}
       use 'nvim-treesitter/nvim-treesitter'
+      -- use 'williamboman/mason.nvim'
+      -- use 'williamboman/mason-lspconfig.nvim'
+      -- use 'neovim/nvim-lspconfig'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -45,6 +53,7 @@ require('packer').startup(
   }
 )
 
+
 require("nvim-treesitter.install").prefer_git = true
 local parsers = require("nvim-treesitter.parsers").get_parser_configs()
 for _, p in pairs(parsers) do
@@ -53,6 +62,7 @@ for _, p in pairs(parsers) do
     "git@git.zhlh6.cn:"
   )
 end
+
 
 vim.g.coc_global_extensions = {
   'coc-copilot',
@@ -77,6 +87,7 @@ vim.g.coc_global_extensions = {
   'coc-emoji',
   'coc-vimtex',
 }
+
 -- Some servers have issues with backup files, see #649.
 vim.opt.backup = false
 vim.opt.writebackup = false
@@ -124,7 +135,6 @@ vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
 
-
 -- Use K to show documentation in preview window.
 function _G.show_docs()
     local cw = vim.fn.expand('<cword>')
@@ -146,15 +156,12 @@ vim.api.nvim_create_autocmd("CursorHold", {
     desc = "Highlight symbol under cursor on CursorHold"
 })
 
-
 -- Symbol renaming.
 vim.keymap.set("n", "<leader>rn", "<Plug>(coc-rename)", {silent = true})
-
 
 -- Formatting selected code.
 vim.keymap.set("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 vim.keymap.set("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
-
 
 -- Setup formatexpr specified filetype(s).
 vim.api.nvim_create_autocmd("FileType", {
@@ -172,7 +179,6 @@ vim.api.nvim_create_autocmd("User", {
     desc = "Update signature help on jump placeholder"
 })
 
-
 -- Applying codeAction to the selected region.
 -- Example: `<leader>aap` for current paragraph
 local opts = {silent = true, nowait = true}
@@ -182,14 +188,11 @@ vim.keymap.set("n", "<leader>a", "<Plug>(coc-codeaction-selected)", opts)
 -- Remap keys for applying codeAction to the current buffer.
 vim.keymap.set("n", "<leader>ac", "<Plug>(coc-codeaction)", opts)
 
-
 -- Apply AutoFix to problem on the current line.
 vim.keymap.set("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 
-
 -- Run the Code Lens action on the current line.
 vim.keymap.set("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
-
 
 -- Map function and class text objects
 -- NOTE: Requires 'textDocument.documentSymbol' support from the language server.
@@ -201,7 +204,6 @@ vim.keymap.set("x", "ic", "<Plug>(coc-classobj-i)", opts)
 vim.keymap.set("o", "ic", "<Plug>(coc-classobj-i)", opts)
 vim.keymap.set("x", "ac", "<Plug>(coc-classobj-a)", opts)
 vim.keymap.set("o", "ac", "<Plug>(coc-classobj-a)", opts)
-
 
 -- Remap <C-f> and <C-b> for scroll float windows/popups.
 ---@diagnostic disable-next-line: redefined-local
@@ -215,12 +217,10 @@ vim.keymap.set("i", "<C-b>",
 vim.keymap.set("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 vim.keymap.set("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
-
 -- Use CTRL-S for selections ranges.
 -- Requires 'textDocument/selectionRange' support of language server.
 vim.keymap.set("n", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
 vim.keymap.set("x", "<C-s>", "<Plug>(coc-range-select)", {silent = true})
-
 
 -- Add `:Format` command to format current buffer.
 vim.api.nvim_create_user_command("Format", "call CocAction('format')", {})
@@ -256,4 +256,28 @@ vim.keymap.set("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 vim.keymap.set("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
 vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+
+
+-- require('mason').setup(
+--   {
+--     github = { download_url_template = 'https://ghproxy.com/https://github.com/%s/releases/download/%s/%s', }
+--   }
+-- )
+-- require('mason-lspconfig').setup(
+--   {
+--       ensure_installed = {
+--         'sumneko_lua',
+--       },
+--       automatic_installation = true,
+--   }
+-- )
+-- require('lspconfig').sumneko_lua.setup {
+--   settings = {
+--     Lua = {
+--       diagnostics = {
+--         globals = { 'vim' }
+--       }
+--     }
+--   }
+-- }
 
