@@ -45,6 +45,7 @@ require('packer').startup(
       use 'tpope/vim-surround'
       use 'tpope/vim-commentary'
       use 'kevinhwang91/rnvimr'
+      use 'itchyny/lightline.vim'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -132,7 +133,8 @@ vim.keymap.set("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
 vim.keymap.set("n", "]g", "<Plug>(coc-diagnostic-next)", {silent = true})
 
 -- GoTo code navigation.
-vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
+-- vim.keymap.set("n", "gd", "<Plug>(coc-definition)", {silent = true})
+vim.keymap.set("n", "<C-]>", "<Plug>(coc-definition)", {silent = true})
 vim.keymap.set("n", "gy", "<Plug>(coc-type-definition)", {silent = true})
 vim.keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 vim.keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
