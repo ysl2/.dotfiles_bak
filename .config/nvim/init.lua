@@ -72,7 +72,6 @@ end
 vim.g.coc_global_extensions = {
   'coc-copilot',
   'coc-diagnostic',
-  'coc-explorer',
   'coc-git',
   'coc-highlight',
   'coc-html',
@@ -261,8 +260,6 @@ vim.keymap.set("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 vim.keymap.set("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
 vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
-
-vim.keymap.set("n", "\\e", ":CocCommand explorer --toggle --root-strategies cwd<CR>", {silent = true, noremap = true})
 
 
 vim.g.EasyMotion_smartcase = 1
