@@ -1,3 +1,15 @@
 {
-  "Lua.telemetry.enable": false
+  "Lua.telemetry.enable": false,
+  "languageserver": {
+    "bash": {
+      "command": "bash-language-server",
+      "args": ["start"],
+      "filetypes": ["sh"]
+    },
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    }
+  }
 }
+
