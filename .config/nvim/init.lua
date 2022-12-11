@@ -263,5 +263,10 @@ vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 vim.g.EasyMotion_smartcase = 1
 vim.g.EasyMotion_keys = 'qwertyuiopasdfghjklzxcvbnm'
 
+
+vim.g.rnvimr_enable_ex = 1
+vim.g.rnvimr_enable_picker = 1
+vim.g.rnvimr_edit_cmd = 'drop'
+vim.g.rnvimr_enable_bw = 1
 vim.cmd('hi link NormalFloat NONE')
 vim.keymap.set("n", "\\r", ":RnvimrToggle<CR>", {silent = true, noremap = true})
