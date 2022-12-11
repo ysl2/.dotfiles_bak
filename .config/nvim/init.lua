@@ -7,6 +7,7 @@ vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = false
 vim.api.nvim_exec('autocmd Filetype lua setlocal tabstop=2 shiftwidth=2 expandtab ', false)
+vim.api.nvim_exec('autocmd Filetype json setlocal tabstop=2 shiftwidth=2 expandtab ', false)
 
 vim.api.nvim_set_keymap('i', '<C-c>', '<ESC>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '>>', '>>^', {noremap = true, silent = true})
@@ -55,4 +56,9 @@ for _, p in pairs(parsers) do
     "git@git.zhlh6.cn:"
   )
 end
+
+vim.g.coc_global_extensions = {
+  'coc-sumneko-lua',
+}
+-- vim.g.coc_disable_uncaught_error = true
 
