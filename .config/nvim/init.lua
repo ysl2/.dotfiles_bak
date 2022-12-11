@@ -9,6 +9,8 @@ vim.opt.expandtab = false
 vim.cmd('autocmd Filetype lua setlocal tabstop=2 shiftwidth=2 expandtab')
 vim.cmd('autocmd Filetype json setlocal tabstop=2 shiftwidth=2 expandtab')
 
+vim.keymap.set('n', '<Space>', '', {})
+vim.g.mapleader = ' '
 local opts = {silent = true, noremap = true}
 vim.keymap.set('i', '<C-c>', '<ESC>', opts)
 vim.keymap.set('n', '>>', '>>^', opts)
@@ -39,6 +41,9 @@ require('packer').startup(
       use 'wbthomason/packer.nvim'
       use {'neoclide/coc.nvim', branch = 'release'}
       use 'nvim-treesitter/nvim-treesitter'
+      use 'easymotion/vim-easymotion'
+      use 'tpope/vim-surround'
+      use 'tpope/vim-commentary'
       -- use 'williamboman/mason.nvim'
       -- use 'williamboman/mason-lspconfig.nvim'
       -- use 'neovim/nvim-lspconfig'
@@ -258,6 +263,10 @@ vim.keymap.set("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
 vim.keymap.set("n", "\\e", ":CocCommand explorer --toggle --root-strategies cwd<CR>", {silent = true, noremap = true})
+
+
+vim.g.EasyMotion_smartcase = 1
+vim.g.EasyMotion_keys = 'qwertyuiopasdfghjklzxcvbnm'
 
 
 -- require('mason').setup(
