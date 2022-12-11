@@ -1,3 +1,6 @@
+-- =============
+-- === Basic ===
+-- =============
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -16,12 +19,16 @@ vim.keymap.set('i', '<C-c>', '<ESC>', opts)
 vim.keymap.set('n', '>>', '>>^', opts)
 vim.keymap.set('n', '<<', '<<^', opts)
 
+-- Auto delete trailing whitespace.
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   pattern = { "*" },
   command = [[%s/\s\+$//e]],
 })
 
 
+-- ===============
+-- === Plugins ===
+-- ===============
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -57,7 +64,9 @@ require('packer').startup(
   }
 )
 
-
+-- ===
+-- === nvim-treesitter/nvim-treesitter
+-- ===
 require("nvim-treesitter.install").prefer_git = true
 local parsers = require("nvim-treesitter.parsers").get_parser_configs()
 for _, p in pairs(parsers) do
@@ -67,7 +76,9 @@ for _, p in pairs(parsers) do
   )
 end
 
-
+-- ===
+-- === neoclide/coc.nvim
+-- ===
 vim.g.coc_global_extensions = {
   'coc-copilot',
   'coc-diagnostic',
@@ -261,14 +272,24 @@ vim.keymap.set("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list.
 vim.keymap.set("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
-
+-- ===
+-- === easymotion/vim-easymotion
+-- ===
 vim.g.EasyMotion_smartcase = 1
 vim.g.EasyMotion_keys = 'qwertyuiopasdfghjklzxcvbnm'
 
-
+-- ===
+-- === kevinhwang91/rnvimr
+-- ===
 vim.g.rnvimr_enable_ex = 1
 vim.g.rnvimr_enable_picker = 1
 vim.g.rnvimr_edit_cmd = 'drop'
 vim.g.rnvimr_enable_bw = 1
 vim.cmd('hi link NormalFloat NONE')
 vim.keymap.set("n", "\\r", ":RnvimrToggle<CR>", {silent = true, noremap = true})
+
+-- ===
+-- === itchyny/lightline.vim
+-- ===
+vim.g.lightline = { colorscheme =  'wombat', }
+
