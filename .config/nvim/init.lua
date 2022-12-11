@@ -31,7 +31,6 @@ require('packer').startup(
   {
     function(use)
       use 'wbthomason/packer.nvim'
-      use 'nvim-treesitter/nvim-treesitter'
       use {'neoclide/coc.nvim', branch = 'release'}
 
       -- Automatically set up your configuration after cloning packer.nvim
@@ -48,17 +47,27 @@ require('packer').startup(
   }
 )
 
-require("nvim-treesitter.install").prefer_git = true
-local parsers = require("nvim-treesitter.parsers").get_parser_configs()
-for _, p in pairs(parsers) do
-  p.install_info.url = p.install_info.url:gsub(
-    "https://github.com/",
-    "git@git.zhlh6.cn:"
-  )
-end
-
 vim.g.coc_global_extensions = {
+  'coc-copilot',
+  'coc-diagnostic',
+  'coc-explorer',
+  'coc-git',
+  'coc-highlight',
+  'coc-html',
+  'coc-json',
+  'coc-markdownlint',
+  'coc-prettier',
+  'coc-pyright',
+  'coc-sh',
+  'coc-snippets',
+  'coc-spell-checker',
+  'coc-tabnine',
+  'coc-yaml',
+  'coc-yank',
   'coc-sumneko-lua',
+  'coc-marketplace',
+  'coc-pairs',
+  'coc-emoji',
+  'coc-vimtex'
 }
--- vim.g.coc_disable_uncaught_error = true
 
