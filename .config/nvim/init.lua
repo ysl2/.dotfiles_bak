@@ -62,6 +62,7 @@ require('packer').startup(
       use 'itchyny/lightline.vim'
       use 'kdheepak/lazygit.nvim'
       use 'Asheq/close-buffers.vim'
+      use 'numirias/semshi'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins

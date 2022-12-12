@@ -38,3 +38,12 @@
 `:w !sudo tee %`
     Write current file using sudo.
 
+
+================
+=== Terminal ===
+================
+`:term`
+    Enter a terminal.
+`<C-\><C-n>`
+    Exit the terminal.
+
