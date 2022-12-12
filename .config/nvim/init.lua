@@ -283,6 +283,12 @@ vim.g.rnvimr_enable_picker = 1
 vim.g.rnvimr_edit_cmd = 'drop'
 vim.g.rnvimr_enable_bw = 1
 vim.cmd('hi link NormalFloat NONE')
+vim.defer_fn(function ()
+    vim.cmd('RnvimrStartBackground')
+end, 0)
+vim.g.rnvimr_action = {
+  ['<CR>'] = 'NvimEdit tabedit',
+}
 vim.keymap.set('n', [[\r]], ':RnvimrToggle<CR>', {silent = true, noremap = true})
 
 -- ===
