@@ -79,26 +79,13 @@ end
 -- === neoclide/coc.nvim
 -- ===
 vim.g.coc_global_extensions = {
-  'coc-copilot',
-  'coc-diagnostic',
-  'coc-git',
-  'coc-highlight',
-  'coc-html',
-  'coc-json',
-  'coc-markdownlint',
-  'coc-prettier',
   'coc-pyright',
   'coc-sh',
-  'coc-snippets',
-  'coc-spell-checker',
   'coc-tabnine',
-  'coc-yaml',
   'coc-yank',
   'coc-sumneko-lua',
   'coc-marketplace',
-  'coc-pairs',
-  'coc-emoji',
-  'coc-vimtex',
+  'coc-git',
 }
 
 -- Some servers have issues with backup files, see #649.
