@@ -1,12 +1,4 @@
 {
-  "coc.preferences.hoverTarget": "preview",
-  "Lua.telemetry.enable": false,
-  "languageserver": {
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"]
-    }
-  }
+  "Lua.telemetry.enable": false
 }
 

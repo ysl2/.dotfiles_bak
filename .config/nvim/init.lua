@@ -17,6 +17,9 @@ vim.api.nvim_create_autocmd('Filetype', {
   command = 'setlocal tabstop=2 shiftwidth=2',
 })
 
+vim.opt.splitright = true
+vim.opt.splitbelow = true
+
 vim.keymap.set('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 local opts = {silent = true, noremap = true}
@@ -57,6 +60,7 @@ require('packer').startup(
       use 'tpope/vim-commentary'
       use 'kevinhwang91/rnvimr'
       use 'itchyny/lightline.vim'
+      use 'kdheepak/lazygit.nvim'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -91,6 +95,8 @@ vim.g.coc_global_extensions = {
   'coc-sumneko-lua',
   'coc-marketplace',
   'coc-git',
+  'coc-pairs',
+  'coc-json',
 }
 
 -- Some servers have issues with backup files, see #649.
@@ -283,4 +289,9 @@ vim.keymap.set('n', [[\r]], ':RnvimrToggle<CR>', {silent = true, noremap = true}
 -- === itchyny/lightline.vim
 -- ===
 vim.g.lightline = { colorscheme =  'wombat', }
+
+-- ===
+-- === kdheepak/lazygit.nvim
+-- ===
+vim.keymap.set('n', [[\g]], ':LazyGit<CR>', {silent = true, noremap = true})
 
