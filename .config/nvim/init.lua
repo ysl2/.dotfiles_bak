@@ -288,6 +288,8 @@ vim.defer_fn(function ()
 end, 0)
 vim.g.rnvimr_action = {
   ['<CR>'] = 'NvimEdit tabedit',
+  ['<C-x>'] = 'NvimEdit split',
+  ['<C-v>'] = 'NvimEdit vsplit',
 }
 vim.keymap.set('n', [[\r]], ':RnvimrToggle<CR>', {silent = true, noremap = true})
 
