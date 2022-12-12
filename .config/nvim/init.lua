@@ -284,7 +284,6 @@ vim.g.EasyMotion_keys = 'qwertyuiopasdfghjklzxcvbnm'
 -- ===
 vim.g.rnvimr_enable_ex = 1
 vim.g.rnvimr_enable_picker = 1
-vim.g.rnvimr_edit_cmd = 'drop'
 vim.g.rnvimr_enable_bw = 1
 vim.cmd('hi link NormalFloat NONE')
 vim.defer_fn(function ()
