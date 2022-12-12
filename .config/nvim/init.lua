@@ -99,6 +99,7 @@ vim.g.coc_global_extensions = {
   'coc-git',
   'coc-pairs',
   'coc-json',
+  'coc-snippets',
 }
 
 -- Some servers have issues with backup files, see #649.
