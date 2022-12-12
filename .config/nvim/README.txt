@@ -18,6 +18,8 @@
     Open a new file in a new tab.
 `:cd %:h`
     Change vim workspace to current file's parent folder.
+`:tabo`
+    Only keep current tab and delete all others.
 
 
 ======================

@@ -1,4 +1,5 @@
 {
-  "Lua.telemetry.enable": false
+  "Lua.telemetry.enable": false,
+  "coc.preferences.hoverTarget": "preview"
 }
 
