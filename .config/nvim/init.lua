@@ -74,13 +74,13 @@ require('packer').startup(
       use 'nvim-tree/nvim-web-devicons'
       -- {
       use {
-          'nvim-telescope/telescope.nvim', 
+          'nvim-telescope/telescope.nvim',
           tag = '0.1.0',
           requires = { {'nvim-lua/plenary.nvim'} }
       }
       use {
-        'nvim-telescope/telescope-fzf-native.nvim', 
-        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' 
+        'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'make'
       }
       -- }
       use 'mg979/vim-xtabline'
