@@ -422,7 +422,8 @@ require('telescope').load_extension('fzf')
 -- ===
 -- === voldikss/vim-floaterm
 -- ===
-vim.keymap.set('n', [[\t]], ':FloatermToggle<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', [[<C-\>]], ':FloatermToggle<CR>', { silent = true, noremap = true })
+vim.keymap.set('t', [[<C-\>]], [[<C-\><C-n>:FloatermToggle<CR>]], {silent = true, noremap = true})
 
 -- ===
 -- === glepnir/dashboard-nvim
