@@ -35,7 +35,6 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   command = [[%s/\s\+$//e]],
 })
 
-
 -- ===============
 -- === Plugins ===
 -- ===============
@@ -76,10 +75,9 @@ require('packer').startup(
       use 'honza/vim-snippets'
       use 'itchyny/vim-cursorword'
       use 'wellle/tmux-complete.vim'
-      use { "lukas-reineke/indent-blankline.nvim",
-        config = function() require("indent_blankline").setup { filetype_exclude = { "dashboard" } } end }
+      use 'lukas-reineke/indent-blankline.nvim'
       use 'voldikss/vim-floaterm'
-      use 'glepnir/dashboard-nvim'
+      use 'mhinz/vim-startify'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -208,7 +206,7 @@ vim.keymap.set('n', '[g', '<Plug>(coc-diagnostic-prev)', { silent = true })
 vim.keymap.set('n', ']g', '<Plug>(coc-diagnostic-next)', { silent = true })
 
 -- GoTo code navigation.
--- vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', {silent = true})
+vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', { silent = true })
 vim.keymap.set('n', '<C-]>', '<Plug>(coc-definition)', { silent = true })
 vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', { silent = true })
 vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', { silent = true })
@@ -430,34 +428,43 @@ vim.keymap.set('n', [[\t]], ':FloatermToggle<CR>', { silent = true, noremap = tr
 -- ===
 -- === glepnir/dashboard-nvim
 -- ===
-require('dashboard').custom_header = {
-  ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
-  ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
-  ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
-  ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
-  ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
-  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
-}
-require('dashboard').custom_center = {
-  { icon = '  ',
-    desc = 'New  file                               ',
-    action = 'DashboardNewFile',
-    shortcut = 'SPC f n' },
-  { icon = '  ',
-    desc = 'File Browser                            ',
-    action = 'RnvimrToggle',
-    shortcut = 'SPC f b' },
-  { icon = '  ',
-    desc = 'Find  File                              ',
-    action = 'Telescope find_files find_command=rg,--hidden,--files',
-    shortcut = 'SPC f f' },
-  { icon = '  ',
-    desc = 'Find  word                              ',
-    action = 'Telescope live_grep',
-    shortcut = 'SPC f w' },
-  { icon = '  ',
-    desc = 'Open Personal vimfiles                  ',
-    action = 'e ~/.config/nvim/init.lua',
-    shortcut = 'SPC f d' },
-}
+-- require('dashboard').custom_header = {
+--   ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+--   ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+--   ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+--   ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+--   ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+--   ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+-- }
+-- require('dashboard').custom_center = {
+--   { icon = '  ',
+--     desc = 'New  file                               ',
+--     action = 'DashboardNewFile',
+--     shortcut = 'SPC f n' },
+--   { icon = '  ',
+--     desc = 'File Browser                            ',
+--     action = 'RnvimrToggle',
+--     shortcut = 'SPC f b' },
+--   { icon = '  ',
+--     desc = 'Find  File                              ',
+--     action = 'Telescope find_files find_command=rg,--hidden,--files',
+--     shortcut = 'SPC f f' },
+--   { icon = '  ',
+--     desc = 'Find  word                              ',
+--     action = 'Telescope live_grep',
+--     shortcut = 'SPC f w' },
+--   { icon = '  ',
+--     desc = 'Open Personal vimfiles                  ',
+--     action = 'e ~/.config/nvim/init.lua',
+--     shortcut = 'SPC f d' },
+-- }
+
+-- require('dashboard').hide_statusline = false
+-- require('dashboard').hide_tabline = false
+-- require('dashboard').hide_winbar = false
+
+-- ===
+-- === lukas-reineke/indent-blankline.nvim
+-- ===
+vim.g.indentLine_fileTypeExclude = { 'startify' }
 
