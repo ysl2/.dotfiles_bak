@@ -1,6 +1,7 @@
 -- =============
 -- === Basic ===
 -- =============
+-- vim.opt.runtimepath:append('~/.bin')
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -75,6 +76,12 @@ require('packer').startup(
       use 'luochen1990/rainbow'
       use 'nvim-tree/nvim-web-devicons'
       use 'mg979/vim-xtabline'
+      -- use 'junegunn/fzf.vim'
+      use {
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
+        requires = { {'nvim-lua/plenary.nvim'} }
+      }
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
