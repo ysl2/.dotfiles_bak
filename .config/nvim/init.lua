@@ -412,6 +412,7 @@ require('telescope').setup {
 }
 vim.keymap.set('n', [[\e]], ':Telescope find_files<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', [[\f]], ':Telescope live_grep<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === nvim-telescope/telescope-fzf-native.nvim
