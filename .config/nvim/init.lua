@@ -24,7 +24,7 @@ vim.opt.autochdir = true
 
 vim.keymap.set('n', '<Space>', '', {})
 vim.g.mapleader = ' '
-local opts = {silent = true, noremap = true}
+local opts = { silent = true, noremap = true }
 vim.keymap.set('i', '<C-c>', '<ESC>', opts)
 vim.keymap.set('n', '>>', '>>^', opts)
 vim.keymap.set('n', '<<', '<<^', opts)
@@ -40,9 +40,9 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
 -- === Plugins ===
 -- ===============
 local ensure_packer = function()
-  local install_path = vim.fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
   if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.fn.system({'git', 'clone', '--depth', '1', 'git@git.zhlh6.cn:wbthomason/packer.nvim', install_path})
+    vim.fn.system({ 'git', 'clone', '--depth', '1', 'git@git.zhlh6.cn:wbthomason/packer.nvim', install_path })
     vim.cmd('packadd packer.nvim')
     return true
   end
@@ -55,7 +55,7 @@ require('packer').startup(
   {
     function(use)
       use 'wbthomason/packer.nvim'
-      use {'neoclide/coc.nvim', branch = 'release'}
+      use { 'neoclide/coc.nvim', branch = 'release' }
       use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
@@ -78,10 +78,12 @@ require('packer').startup(
       use {
         'nvim-telescope/telescope.nvim',
         branch = '0.1.x',
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { { 'nvim-lua/plenary.nvim' } }
       }
-      use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+      use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
       use 'gcmt/wildfire.vim'
+      use 'honza/vim-snippets'
+      use 'itchyny/vim-cursorword'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -89,7 +91,7 @@ require('packer').startup(
         require('packer').sync()
       end
     end,
-    config = {git = {default_url_format = 'git@git.zhlh6.cn:%s'}}
+    config = { git = { default_url_format = 'git@git.zhlh6.cn:%s' } }
   }
 )
 
@@ -107,7 +109,8 @@ end
 
 require('nvim-treesitter.configs').setup {
   -- A list of parser names, or "all"
-  ensure_installed = { 'lua', 'bash', 'bibtex', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'diff', 'help', 'http', 'json', 'jsonc', 'latex', 'lua', 'markdown', 'markdown_inline', 'python', 'regex', 'toml', 'vim', 'yaml'},
+  ensure_installed = { 'lua', 'bash', 'bibtex', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'diff', 'help',
+    'http', 'json', 'jsonc', 'latex', 'lua', 'markdown', 'markdown_inline', 'python', 'regex', 'toml', 'vim', 'yaml' },
 
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = true,
@@ -132,7 +135,7 @@ require('nvim-treesitter.configs').setup {
     -- the name of the parser)
     -- list of language that will be disabled
     -- disable = { "c", "rust" },
-    disable = {'python'},
+    disable = { 'python' },
     -- Or use a function for more flexibility, e.g. to disable slow treesitter highlight for large files
     -- disable = function(lang, buf)
     --     local max_filesize = 100 * 1024 -- 100 KB
@@ -180,8 +183,8 @@ vim.opt.signcolumn = 'yes'
 
 -- Auto complete
 function _G.check_back_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+  local col = vim.fn.col('.') - 1
+  return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 
 -- Use tab for trigger completion with characters ahead and navigate.
@@ -189,8 +192,9 @@ end
 -- no select by `"suggest.noselect": true` in your configuration file.
 -- NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 -- other plugin before putting this into your config.
-local opts = {silent = true, noremap = true, expr = true, replace_keycodes = false}
-vim.keymap.set('i', '<TAB>', 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()', opts)
+local opts = { silent = true, noremap = true, expr = true, replace_keycodes = false }
+vim.keymap.set('i', '<TAB>', 'coc#pum#visible() ? coc#pum#next(1) : v:lua.check_back_space() ? "<TAB>" : coc#refresh()',
+  opts)
 vim.keymap.set('i', '<S-TAB>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 
 -- Make <CR> to accept selected completion item or notify coc.nvim to format
@@ -200,67 +204,68 @@ vim.keymap.set('i', '<cr>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<
 -- Use <c-j> to trigger snippets
 vim.keymap.set('i', '<c-j>', '<Plug>(coc-snippets-expand-jump)')
 -- Use <c-space> to trigger completion.
-vim.keymap.set('i', '<c-space>', 'coc#refresh()', {silent = true, expr = true})
+vim.keymap.set('i', '<c-space>', 'coc#refresh()', { silent = true, expr = true })
 
 -- Use `[g` and `]g` to navigate diagnostics
 -- Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-vim.keymap.set('n', '[g', '<Plug>(coc-diagnostic-prev)', {silent = true})
-vim.keymap.set('n', ']g', '<Plug>(coc-diagnostic-next)', {silent = true})
+vim.keymap.set('n', '[g', '<Plug>(coc-diagnostic-prev)', { silent = true })
+vim.keymap.set('n', ']g', '<Plug>(coc-diagnostic-next)', { silent = true })
 
 -- GoTo code navigation.
 -- vim.keymap.set('n', 'gd', '<Plug>(coc-definition)', {silent = true})
-vim.keymap.set('n', '<C-]>', '<Plug>(coc-definition)', {silent = true})
-vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', {silent = true})
-vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', {silent = true})
-vim.keymap.set('n', 'gr', '<Plug>(coc-references)', {silent = true})
+vim.keymap.set('n', '<C-]>', '<Plug>(coc-definition)', { silent = true })
+vim.keymap.set('n', 'gy', '<Plug>(coc-type-definition)', { silent = true })
+vim.keymap.set('n', 'gi', '<Plug>(coc-implementation)', { silent = true })
+vim.keymap.set('n', 'gr', '<Plug>(coc-references)', { silent = true })
 
 -- Use K to show documentation in preview window.
 function _G.show_docs()
-    local cw = vim.fn.expand('<cword>')
-    if vim.fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
-        vim.api.nvim_command('h ' .. cw)
-    elseif vim.api.nvim_eval('coc#rpc#ready()') then
-        vim.fn.CocActionAsync('doHover')
-    else
-        vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
-    end
+  local cw = vim.fn.expand('<cword>')
+  if vim.fn.index({ 'vim', 'help' }, vim.bo.filetype) >= 0 then
+    vim.api.nvim_command('h ' .. cw)
+  elseif vim.api.nvim_eval('coc#rpc#ready()') then
+    vim.fn.CocActionAsync('doHover')
+  else
+    vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+  end
 end
-vim.keymap.set('n', 'gh', '<CMD>lua _G.show_docs()<CR>', {silent = true})
+
+vim.keymap.set('n', 'gh', '<CMD>lua _G.show_docs()<CR>', { silent = true })
 
 -- Highlight the symbol and its references when holding the cursor.
 vim.api.nvim_create_augroup('CocGroup', {})
 vim.api.nvim_create_autocmd('CursorHold', {
-    group = 'CocGroup',
-    command = "silent call CocActionAsync('highlight')",
-    desc = 'Highlight symbol under cursor on CursorHold'
+  group = 'CocGroup',
+  command = "silent call CocActionAsync('highlight')",
+  desc = 'Highlight symbol under cursor on CursorHold'
 })
 
 -- Symbol renaming.
-vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', {silent = true})
+vim.keymap.set('n', '<leader>rn', '<Plug>(coc-rename)', { silent = true })
 
 -- Formatting selected code.
-vim.keymap.set('x', '<leader>f', '<Plug>(coc-format-selected)', {silent = true})
-vim.keymap.set('n', '<leader>f', '<Plug>(coc-format-selected)', {silent = true})
+vim.keymap.set('x', '<leader>f', '<Plug>(coc-format-selected)', { silent = true })
+vim.keymap.set('n', '<leader>f', '<Plug>(coc-format-selected)', { silent = true })
 
 -- Setup formatexpr specified filetype(s).
 vim.api.nvim_create_autocmd('FileType', {
-    group = 'CocGroup',
-    pattern = 'typescript,json',
-    command = "setl formatexpr=CocAction('formatSelected')",
-    desc = 'Setup formatexpr specified filetype(s).'
+  group = 'CocGroup',
+  pattern = 'typescript,json',
+  command = "setl formatexpr=CocAction('formatSelected')",
+  desc = 'Setup formatexpr specified filetype(s).'
 })
 
 -- Update signature help on jump placeholder.
 vim.api.nvim_create_autocmd('User', {
-    group = 'CocGroup',
-    pattern = 'CocJumpPlaceholder',
-    command = "call CocActionAsync('showSignatureHelp')",
-    desc = 'Update signature help on jump placeholder'
+  group = 'CocGroup',
+  pattern = 'CocJumpPlaceholder',
+  command = "call CocActionAsync('showSignatureHelp')",
+  desc = 'Update signature help on jump placeholder'
 })
 
 -- Applying codeAction to the selected region.
 -- Example: `<leader>aap` for current paragraph
-local opts = {silent = true, nowait = true}
+local opts = { silent = true, nowait = true }
 vim.keymap.set('x', '<leader>a', '<Plug>(coc-codeaction-selected)', opts)
 vim.keymap.set('n', '<leader>a', '<Plug>(coc-codeaction-selected)', opts)
 
@@ -286,26 +291,26 @@ vim.keymap.set('o', 'ac', '<Plug>(coc-classobj-a)', opts)
 
 -- Remap <C-f> and <C-b> for scroll float windows/popups.
 ---@diagnostic disable-next-line: redefined-local
-local opts = {silent = true, nowait = true, expr = true}
+local opts = { silent = true, nowait = true, expr = true }
 vim.keymap.set('n', '<C-f>', 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 vim.keymap.set('n', '<C-b>', 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 vim.keymap.set('i', '<C-f>',
-       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
+  'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', opts)
 vim.keymap.set('i', '<C-b>',
-       'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
+  'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', opts)
 vim.keymap.set('v', '<C-f>', 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', opts)
 vim.keymap.set('v', '<C-b>', 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', opts)
 
 -- Use CTRL-S for selections ranges.
 -- Requires 'textDocument/selectionRange' support of language server.
-vim.keymap.set('n', '<C-s>', '<Plug>(coc-range-select)', {silent = true})
-vim.keymap.set('x', '<C-s>', '<Plug>(coc-range-select)', {silent = true})
+vim.keymap.set('n', '<C-s>', '<Plug>(coc-range-select)', { silent = true })
+vim.keymap.set('x', '<C-s>', '<Plug>(coc-range-select)', { silent = true })
 
 -- Add `:Format` command to format current buffer.
 vim.api.nvim_create_user_command('Format', "call CocAction('format')", {})
 
 -- " Add `:Fold` command to fold current buffer.
-vim.api.nvim_create_user_command('Fold', "call CocAction('fold', <f-args>)", {nargs = '?'})
+vim.api.nvim_create_user_command('Fold', "call CocAction('fold', <f-args>)", { nargs = '?' })
 
 -- Add `:OR` command for organize imports of the current buffer.
 vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
@@ -318,7 +323,7 @@ vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}"
 -- Mappings for CoCList
 -- code actions and coc stuff
 ---@diagnostic disable-next-line: redefined-local
-local opts = {silent = true, nowait = true}
+local opts = { silent = true, nowait = true }
 -- Show all diagnostics.
 vim.keymap.set('n', '<space>a', ':<C-u>CocList diagnostics<cr>', opts)
 -- Manage extensions.
@@ -349,25 +354,25 @@ vim.g.rnvimr_enable_ex = 1
 vim.g.rnvimr_enable_picker = 1
 vim.g.rnvimr_enable_bw = 1
 vim.cmd('hi link NormalFloat NONE')
-vim.defer_fn(function ()
-    vim.cmd('RnvimrStartBackground')
+vim.defer_fn(function()
+  vim.cmd('RnvimrStartBackground')
 end, 0)
 vim.g.rnvimr_action = {
   ['<CR>'] = 'NvimEdit tabedit',
   ['<C-x>'] = 'NvimEdit split',
   ['<C-v>'] = 'NvimEdit vsplit',
 }
-vim.keymap.set('n', [[\r]], ':RnvimrToggle<CR>', {silent = true, noremap = true})
+vim.keymap.set('n', [[\r]], ':RnvimrToggle<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === itchyny/lightline.vim
 -- ===
-vim.g.lightline = { colorscheme =  'wombat', }
+vim.g.lightline = { colorscheme = 'wombat', }
 
 -- ===
 -- === kdheepak/lazygit.nvim
 -- ===
-vim.keymap.set('n', [[\g]], ':LazyGit<CR>', {silent = true, noremap = true})
+vim.keymap.set('n', [[\g]], ':LazyGit<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === mg979/vim-tabline
@@ -380,7 +385,7 @@ vim.g.xtabline_settings = {
 -- ===
 -- === nvim-telescope/telescope.nvim
 -- ===
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
@@ -411,8 +416,8 @@ require('telescope').setup{
   --   -- please take a look at the readme of the extension you want to configure
   -- }
 }
-vim.keymap.set('n', [[\e]], ':Telescope find_files<CR>', {silent = true, noremap = true})
-vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', {silent = true, noremap = true})
+vim.keymap.set('n', [[\e]], ':Telescope find_files<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === nvim-telescope/telescope-fzf-native.nvim'
