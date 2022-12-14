@@ -196,7 +196,7 @@ vim.keymap.set('i', '<S-TAB>', [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]
 vim.keymap.set('i', '<cr>', [[coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"]], opts)
 
 -- Use <c-j> to trigger snippets
-vim.keymap.set('i', '<c-j>', '<Plug>(coc-snippets-expand-jump)')
+-- vim.keymap.set('i', '<c-j>', '<Plug>(coc-snippets-expand-jump)')
 -- Use <c-space> to trigger completion.
 vim.keymap.set('i', '<c-space>', 'coc#refresh()', { silent = true, expr = true })
 
@@ -388,8 +388,8 @@ require('telescope').setup {
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ['<C-j>'] = require 'telescope.actions'.move_selection_next,
-        ['<C-k>'] = require 'telescope.actions'.move_selection_previous,
+        ['<C-j>'] = require('telescope.actions').move_selection_next,
+        ['<C-k>'] = require('telescope.actions').move_selection_previous,
       }
     }
   },
@@ -418,8 +418,6 @@ vim.keymap.set('n', [[\f]], ':Telescope live_grep<CR>', { silent = true, noremap
 -- === nvim-telescope/telescope-fzf-native.nvim
 -- ===
 require('telescope').load_extension('fzf')
-
-vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === voldikss/vim-floaterm
