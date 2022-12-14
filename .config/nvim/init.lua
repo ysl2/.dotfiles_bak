@@ -56,13 +56,8 @@ require('packer').startup(
     function(use)
       use 'wbthomason/packer.nvim'
       use { 'neoclide/coc.nvim', branch = 'release' }
-      use {
-        'nvim-treesitter/nvim-treesitter',
-        run = function()
-          local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
-          ts_update()
-        end,
-      }
+      use { 'nvim-treesitter/nvim-treesitter',
+        run = function() local ts_update = require('nvim-treesitter.install').update({ with_sync = true }) ts_update() end, }
       use 'easymotion/vim-easymotion'
       use 'tpope/vim-surround'
       use 'tpope/vim-commentary'
@@ -75,15 +70,13 @@ require('packer').startup(
       use 'luochen1990/rainbow'
       use 'nvim-tree/nvim-web-devicons'
       use 'mg979/vim-xtabline'
-      use {
-        'nvim-telescope/telescope.nvim',
-        branch = '0.1.x',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-      }
+      use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { { 'nvim-lua/plenary.nvim' } } }
       use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
       use 'gcmt/wildfire.vim'
       use 'honza/vim-snippets'
       use 'itchyny/vim-cursorword'
+      use 'wellle/tmux-complete.vim'
+      use "lukas-reineke/indent-blankline.nvim"
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -423,4 +416,3 @@ vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap =
 -- === nvim-telescope/telescope-fzf-native.nvim'
 -- ===
 require('telescope').load_extension('fzf')
-
