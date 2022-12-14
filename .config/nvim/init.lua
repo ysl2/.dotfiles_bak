@@ -74,17 +74,6 @@ require('packer').startup(
       use 'jbgutierrez/vim-better-comments'
       use 'luochen1990/rainbow'
       use 'nvim-tree/nvim-web-devicons'
-      -- {
-      use {
-          'nvim-telescope/telescope.nvim',
-          tag = '0.1.0',
-          requires = { {'nvim-lua/plenary.nvim'} }
-      }
-      use {
-        'nvim-telescope/telescope-fzf-native.nvim',
-        run = 'make'
-      }
-      -- }
       use 'mg979/vim-xtabline'
 
       -- Automatically set up your configuration after cloning packer.nvim
