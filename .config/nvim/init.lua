@@ -80,6 +80,8 @@ require('packer').startup(
         branch = '0.1.x',
         requires = { {'nvim-lua/plenary.nvim'} }
       }
+      use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+      use 'gcmt/wildfire.vim'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -411,4 +413,9 @@ require('telescope').setup{
 }
 vim.keymap.set('n', [[\e]], ':Telescope find_files<CR>', {silent = true, noremap = true})
 vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', {silent = true, noremap = true})
+
+-- ===
+-- === nvim-telescope/telescope-fzf-native.nvim'
+-- ===
+require('telescope').load_extension('fzf')
 
