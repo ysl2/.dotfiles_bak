@@ -76,8 +76,10 @@ require('packer').startup(
       use 'honza/vim-snippets'
       use 'itchyny/vim-cursorword'
       use 'wellle/tmux-complete.vim'
-      use "lukas-reineke/indent-blankline.nvim"
+      use { "lukas-reineke/indent-blankline.nvim",
+        config = function() require("indent_blankline").setup { filetype_exclude = { "dashboard" } } end }
       use 'voldikss/vim-floaterm'
+      use 'glepnir/dashboard-nvim'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -424,4 +426,38 @@ vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap =
 -- === voldikss/vim-floaterm
 -- ===
 vim.keymap.set('n', [[\t]], ':FloatermToggle<CR>', { silent = true, noremap = true })
+
+-- ===
+-- === glepnir/dashboard-nvim
+-- ===
+require('dashboard').custom_header = {
+  ' ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗',
+  ' ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║',
+  ' ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║',
+  ' ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║',
+  ' ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║',
+  ' ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝',
+}
+require('dashboard').custom_center = {
+  { icon = '  ',
+    desc = 'New  file                               ',
+    action = 'DashboardNewFile',
+    shortcut = 'SPC f n' },
+  { icon = '  ',
+    desc = 'File Browser                            ',
+    action = 'RnvimrToggle',
+    shortcut = 'SPC f b' },
+  { icon = '  ',
+    desc = 'Find  File                              ',
+    action = 'Telescope find_files find_command=rg,--hidden,--files',
+    shortcut = 'SPC f f' },
+  { icon = '  ',
+    desc = 'Find  word                              ',
+    action = 'Telescope live_grep',
+    shortcut = 'SPC f w' },
+  { icon = '  ',
+    desc = 'Open Personal vimfiles                  ',
+    action = 'e ~/.config/nvim/init.lua',
+    shortcut = 'SPC f d' },
+}
 
