@@ -78,6 +78,7 @@ require('packer').startup(
       use 'lukas-reineke/indent-blankline.nvim'
       use 'voldikss/vim-floaterm'
       use 'mhinz/vim-startify'
+      use 'jiangmiao/auto-pairs'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -158,9 +159,9 @@ vim.g.coc_global_extensions = {
   'coc-sumneko-lua',
   'coc-marketplace',
   'coc-git',
-  'coc-pairs',
   'coc-json',
   'coc-snippets',
+  'coc-clangd',
 }
 
 -- Some servers have issues with backup files, see #649.
@@ -335,6 +336,8 @@ vim.keymap.set('n', '<space>k', ':<C-u>CocPrev<cr>', opts)
 -- Resume latest coc list.
 vim.keymap.set('n', '<space>p', ':<C-u>CocListResume<cr>', opts)
 
+vim.keymap.set('n', [[\v]], ':CocOutline<CR>', {silent = true, noremap = true})
+
 -- ===
 -- === easymotion/vim-easymotion
 -- ===
@@ -423,7 +426,8 @@ require('telescope').load_extension('fzf')
 -- === voldikss/vim-floaterm
 -- ===
 vim.keymap.set('n', [[<C-\>]], ':FloatermToggle<CR>', { silent = true, noremap = true })
-vim.keymap.set('t', [[<C-\>]], [[<C-\><C-n>:FloatermToggle<CR>]], {silent = true, noremap = true})
+vim.keymap.set('t', [[<C-[>]], [[<C-\><C-n>]], { silent = true, noremap = true })
+vim.keymap.set('t', [[<C-\>]], [[<C-\><C-n>:FloatermToggle<CR>]], { silent = true, noremap = true })
 
 -- ===
 -- === glepnir/dashboard-nvim
