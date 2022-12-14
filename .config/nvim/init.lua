@@ -20,6 +20,8 @@ vim.api.nvim_create_autocmd('Filetype', {
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
+vim.opt.autochdir = true
+
 vim.keymap.set('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 local opts = {silent = true, noremap = true}
@@ -372,14 +374,10 @@ vim.g.lightline = { colorscheme =  'wombat', }
 vim.keymap.set('n', [[\g]], ':LazyGit<CR>', {silent = true, noremap = true})
 
 -- ===
--- === nvim-tree/nvim-web-devicons
+-- === mg979/vim-tabline
 -- ===
-require'nvim-web-devicons'.setup {
-  default = true;
+vim.g.xtabline_settings = {
+  enable_mappings = 0,
+  tab_number_in_left_corner = 0,
 }
-
--- ===
--- === nvim-telescope/telescope-fzf-native.nvim
--- ===
-require('telescope').load_extension('fzf')
 
