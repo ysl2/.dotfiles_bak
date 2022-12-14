@@ -77,6 +77,7 @@ require('packer').startup(
       use 'itchyny/vim-cursorword'
       use 'wellle/tmux-complete.vim'
       use "lukas-reineke/indent-blankline.nvim"
+      use 'voldikss/vim-floaterm'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -413,6 +414,14 @@ vim.keymap.set('n', [[\e]], ':Telescope find_files<CR>', { silent = true, norema
 vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap = true })
 
 -- ===
--- === nvim-telescope/telescope-fzf-native.nvim'
+-- === nvim-telescope/telescope-fzf-native.nvim
 -- ===
 require('telescope').load_extension('fzf')
+
+vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap = true })
+
+-- ===
+-- === voldikss/vim-floaterm
+-- ===
+vim.keymap.set('n', [[\t]], ':FloatermToggle<CR>', { silent = true, noremap = true })
+
