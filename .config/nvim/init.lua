@@ -458,7 +458,6 @@ vim.keymap.set('n', [[\t]], ':FloatermToggle<CR>', { silent = true, noremap = tr
 --     action = 'e ~/.config/nvim/init.lua',
 --     shortcut = 'SPC f d' },
 -- }
-
 -- require('dashboard').hide_statusline = false
 -- require('dashboard').hide_tabline = false
 -- require('dashboard').hide_winbar = false
