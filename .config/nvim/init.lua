@@ -22,6 +22,10 @@ vim.opt.splitbelow = true
 
 vim.opt.autochdir = true
 
+vim.opt.termguicolors = true
+vim.opt.winblend = 30
+vim.cmd('colorscheme evening')
+
 vim.keymap.set('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 local opts = { silent = true, noremap = true }
@@ -34,6 +38,7 @@ vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = { '*' },
   command = [[%s/\s\+$//e]],
 })
+
 
 -- ===============
 -- === Plugins ===
@@ -78,7 +83,6 @@ require('packer').startup(
       use 'lukas-reineke/indent-blankline.nvim'
       use 'voldikss/vim-floaterm'
       use 'mhinz/vim-startify'
-      use 'jiangmiao/auto-pairs'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -162,6 +166,7 @@ vim.g.coc_global_extensions = {
   'coc-json',
   'coc-snippets',
   'coc-clangd',
+  'coc-pairs',
 }
 
 -- Some servers have issues with backup files, see #649.
