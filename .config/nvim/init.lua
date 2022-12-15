@@ -20,8 +20,6 @@ vim.api.nvim_create_autocmd('Filetype', {
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
-vim.opt.autochdir = true
-
 vim.opt.termguicolors = true
 vim.opt.winblend = 30
 vim.cmd('colorscheme evening')
@@ -76,6 +74,7 @@ require('packer').startup(
       use 'mg979/vim-xtabline'
       use { 'nvim-telescope/telescope.nvim', branch = '0.1.x', requires = { { 'nvim-lua/plenary.nvim' } } }
       use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+      use 'nvim-telescope/telescope-file-browser.nvim'
       use 'gcmt/wildfire.vim'
       use 'honza/vim-snippets'
       use 'itchyny/vim-cursorword'
@@ -83,6 +82,7 @@ require('packer').startup(
       use 'lukas-reineke/indent-blankline.nvim'
       use 'voldikss/vim-floaterm'
       use 'mhinz/vim-startify'
+      use 'airblade/vim-rooter'
 
       -- Automatically set up your configuration after cloning packer.nvim
       -- Put this at the end after all plugins
@@ -318,7 +318,7 @@ vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'edito
 -- Add (Neo)Vim's native statusline support.
 -- NOTE: Please see `:h coc-status` for integrations with external plugins that
 -- provide custom statusline: lightline.vim, vim-airline.
-vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
+-- vim.opt.statusline:prepend("%{coc#status()}%{get(b:,'coc_current_function','')}")
 
 -- Mappings for CoCList
 -- code actions and coc stuff
@@ -389,17 +389,24 @@ vim.g.xtabline_settings = {
 -- ===
 require('telescope').setup {
   defaults = {
-    -- Default configuration for telescope goes here:
-    -- config_key = value,
+    -- layout_strategy = 'horizontal',
+    path_display = { 'smart' },
+    -- sorting_strategy = 'ascending',
     mappings = {
       i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
         ['<C-j>'] = require('telescope.actions').move_selection_next,
         ['<C-k>'] = require('telescope.actions').move_selection_previous,
+        ['<C-u>'] = require('telescope.actions').preview_scrolling_up,
+        ['<C-d>'] = require('telescope.actions').preview_scrolling_down,
       }
-    }
+    },
+    -- layout_config = {
+    --   horizontal = {
+    --     preview_cutoff = 100,
+    --     preview_width = 0.6,
+    --     preview = true
+    --   },
+    -- },
   },
   -- pickers = {
   --   -- Default configuration for builtin pickers goes here:
@@ -410,17 +417,16 @@ require('telescope').setup {
   --   -- Now the picker_config_key will be applied every time you call this
   --   -- builtin picker
   -- },
-  -- extensions = {
-  --   -- Your extension configuration goes here:
-  --   -- extension_name = {
-  --   --   extension_config_key = value,
-  --   -- }
-  --   -- please take a look at the readme of the extension you want to configure
-  -- }
+  extensions = {
+    -- Your extension configuration goes here:
+    file_browser = {
+      grouped = true,
+    }
+  }
 }
-vim.keymap.set('n', [[\e]], ':Telescope find_files<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', [[\f]], ':Telescope find_files<CR>', { silent = true, noremap = true })
 vim.keymap.set('n', [[\b]], ':Telescope buffers<CR>', { silent = true, noremap = true })
-vim.keymap.set('n', [[\f]], ':Telescope live_grep<CR>', { silent = true, noremap = true })
+vim.keymap.set('n', [[\s]], ':Telescope live_grep<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === nvim-telescope/telescope-fzf-native.nvim
@@ -475,3 +481,10 @@ vim.keymap.set('t', [[<C-\>]], [[<C-\><C-n>:FloatermToggle<CR>]], { silent = tru
 -- === lukas-reineke/indent-blankline.nvim
 -- ===
 vim.g.indentLine_fileTypeExclude = { 'startify' }
+
+-- ===
+-- === nvim-telescope/telescope-file-browser.nvim
+-- ===
+require('telescope').load_extension('file_browser')
+vim.keymap.set('n', [[\e]], [[:Telescope file_browser<CR>]], { silent = true, noremap = true })
+
