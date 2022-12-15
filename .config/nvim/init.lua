@@ -341,7 +341,7 @@ vim.keymap.set('n', '<space>k', ':<C-u>CocPrev<cr>', opts)
 -- Resume latest coc list.
 vim.keymap.set('n', '<space>p', ':<C-u>CocListResume<cr>', opts)
 
-vim.keymap.set('n', [[\v]], ':CocOutline<CR>', {silent = true, noremap = true})
+vim.keymap.set('n', [[\v]], ':CocOutline<CR>', { silent = true, noremap = true })
 
 -- ===
 -- === easymotion/vim-easymotion
@@ -475,4 +475,3 @@ vim.keymap.set('t', [[<C-\>]], [[<C-\><C-n>:FloatermToggle<CR>]], { silent = tru
 -- === lukas-reineke/indent-blankline.nvim
 -- ===
 vim.g.indentLine_fileTypeExclude = { 'startify' }
-
