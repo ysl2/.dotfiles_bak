@@ -1,20 +1,26 @@
 ==============
 === Global ===
 ==============
-Terminal editor (e.g. Bash) follows `emacs` keybindings.
+Terminal editor (e.g. Bash) follows `emacs` keybindings by default.
+
+
+=====================
+=== Bash Terminal ===
+=====================
+`!!`, `!-1`
+    Run last command
 
 
 =========================
 === Windows & Buffers ===
 =========================
-
 `:ls`
     List all buffers.
 `:b 3`
     Jump to the 3rd buffer.
 `:tab sball`
     Split all buffer file to tabs.
-`:bn` `:bp`
+`:bn`, `:bp`
     Next & Previous buffer.
 `:bd`
     Delete current buffer.
@@ -31,7 +37,6 @@ Terminal editor (e.g. Bash) follows `emacs` keybindings.
 ======================
 === Visual Command ===
 ======================
-
 `:normal`
     Use it in visual-line mode. Can run normal mode commands in visual-line mode .
 
