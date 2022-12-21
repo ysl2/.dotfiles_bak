@@ -1,3 +1,9 @@
+==============
+=== Global ===
+==============
+Terminal editor (e.g. Bash) follows `emacs` keybindings.
+
+
 =========================
 === Windows & Buffers ===
 =========================
