@@ -30,6 +30,8 @@ local opts = { silent = true, noremap = true }
 vim.keymap.set('i', '<C-c>', '<ESC>', opts)
 vim.keymap.set('n', '>>', '>>^', opts)
 vim.keymap.set('n', '<<', '<<^', opts)
+vim.keymap.set('v', '>', '>^', opts)
+vim.keymap.set('v', '<', '<^', opts)
 
 -- Auto delete trailing whitespace.
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
@@ -356,9 +358,6 @@ vim.g.rnvimr_enable_ex = 1
 vim.g.rnvimr_enable_picker = 1
 vim.g.rnvimr_enable_bw = 1
 vim.cmd('hi link NormalFloat NONE')
-vim.defer_fn(function()
-  vim.cmd('RnvimrStartBackground')
-end, 0)
 vim.g.rnvimr_action = {
   ['<CR>'] = 'NvimEdit tabedit',
   ['<C-x>'] = 'NvimEdit split',
