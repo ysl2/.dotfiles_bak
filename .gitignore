@@ -43,10 +43,6 @@
 /.config/lazygit/*
 !/.config/lazygit/config.yml
 
-!/.config/coc
-/.config/coc/*
-!/.config/coc/ultisnips
-
 
 # ===
 # === ~/.cache
